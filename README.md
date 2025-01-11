@@ -44,4 +44,4 @@ BooksList is a JavaScript application designed to display and filter a list of b
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/bookslist.git
+   git clone https://github.com/SilverStorm2/book-app.git
