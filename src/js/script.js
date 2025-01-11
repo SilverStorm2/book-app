@@ -7,7 +7,7 @@ class BooksList {
     );
     this.getElements();
     this.render();
-    this.initAction();  
+    this.initActions();  
   }
     
   getElements() {
@@ -26,7 +26,7 @@ class BooksList {
         id: book.id,
         name: book.name,
         price: book.price,
-        rating: book.rsting,
+        rating: book.rating,
         image: book.image,
         details: book.details,
         ratingWidth,
