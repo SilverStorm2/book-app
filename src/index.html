@@ -15,12 +15,34 @@
 
       <!-- FILTERS FORM -->
       <section class="filters">
-        <div>
+        <div class="filters__group">
           <label>
             Adults only: <input name="filter" value="adults" type="checkbox">
           </label>
           <label>
             Non-fiction: <input name="filter" value="nonFiction" type="checkbox">
+          </label>
+        </div>
+        <div class="filters__group filters__controls">
+          <label class="filters__search">
+            Search:
+            <input type="search" name="search" data-search placeholder="Title">
+          </label>
+          <label>
+            Sort by:
+            <select name="sortBy" data-sort-by>
+              <option value="default">Default</option>
+              <option value="name">Title</option>
+              <option value="price">Price</option>
+              <option value="rating">Rating</option>
+            </select>
+          </label>
+          <label>
+            Direction:
+            <select name="sortDir" data-sort-dir>
+              <option value="asc">Asc</option>
+              <option value="desc">Desc</option>
+            </select>
           </label>
         </div>
       </section>
@@ -31,12 +53,22 @@
         <ul class="books-list">
         </ul>
       </section>
+
+      <!-- FAVORITES PANEL -->
+      <section class="favorites-panel">
+        <h2>Favorites</h2>
+        <div class="favorites-actions">
+          <button type="button" class="favorites-clear" data-clear-favorites>Clear favorites</button>
+        </div>
+        <p class="favorites-empty" data-favorites-empty>Brak ulubionych.</p>
+        <ul class="favorites-list"></ul>
+      </section>
     </div>
   </main>
 
   <!-- BOOK TEMPLATE -->
   <script id="template-book" type="text/x-handlebars-template">
-    <li class="book">
+    <li class="book {{#if isFavorite}}book--favorite{{/if}}">
 
       <!-- title and price -->
       <header class="book__header">
@@ -53,8 +85,7 @@
 
       <!-- ratings -->
       <div class="book__rating">
-        <div class="book__rating__fill"
-        style="width: {{ratingWidth}}%; background: {{ratingBgc}};">
+        <div class="book__rating__fill" style="width: {{ ratingWidth }}%; background: {{ ratingBgc }};">
           {{ rating }}/10
         </div>
       </div>

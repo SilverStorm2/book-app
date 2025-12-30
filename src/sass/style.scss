@@ -14,7 +14,61 @@ figure {
   text-align: center;
 }
 
+.filters {
+  margin-bottom: 20px;
+
+  &__group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  &__controls {
+    margin-top: 10px;
+  }
+
+  label {
+    align-items: center;
+    display: inline-flex;
+    gap: 6px;
+  }
+
+  input[type="search"],
+  select {
+    padding: 4px 8px;
+  }
+}
+
 .books-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.favorites-panel {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.favorites-actions {
+  margin: 10px 0;
+}
+
+.favorites-clear {
+  background: #c0392b;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  padding: 6px 12px;
+}
+
+.favorites-empty {
+  color: #888;
+  margin: 10px 0;
+}
+
+.favorites-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -51,7 +105,8 @@ figure {
       opacity: 0.5;
     }
 
-    &.favorite {
+    &.favorite,
+    .book--favorite & {
       box-shadow: 0 0 20px rgba(0,0,0,0.2);
       transform: scale(1.1);
 
