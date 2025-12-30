@@ -81,6 +81,13 @@ figure {
     position: relative;
     transition: .2s;
 
+    img {
+      display: block;
+      height: 260px;
+      object-fit: cover;
+      width: 180px;
+    }
+
     &::after {
       content: "\f004";
       font-family: "Font Awesome 5 Free";
